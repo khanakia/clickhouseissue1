@@ -1,11 +1,10 @@
 # clickhouseissue1
 
-having a weird issue with Clickhosue when i filter by pfid_productname there are 7 Rows
-but the moment i add a VendorCode filter it returns only 1 rows
+I'm experiencing a strange issue with ClickHouse. When I filter my table by pfid_productname, I get 7 rows as expected. But as soon as I add a VendorCode filter, the query suddenly returns only 1 row.
 
-But if i create a copy of the table to another table let say INSERT INTO inventory2 Select * from inventory1 then same queries below works fine and it returns 7 rows for both filters
+Here’s where it gets weirder: if I make an exact copy of the table (using `INSERT INTO inventory2 SELECT * FROM inventory1`), and run the same queries on this new table, both filters together return all 7 rows as they should.
 
-Can anybody guide me or help me to resolve this issue ?
+Has anyone run into this before, or can anyone explain why this is happening? Any help would be really appreciated!
 
 ```sql
 create table inventory1
